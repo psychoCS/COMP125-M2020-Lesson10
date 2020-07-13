@@ -75,6 +75,8 @@
 
     function validateForm()
     {
+        let contact = {};
+
         let contactForm = document.forms[0];
 
         if(contactForm)
@@ -94,6 +96,7 @@
                 }
                 else
                 {
+                    contact.firstName = firstName.value;
                     errorMessage.hidden = true;
                 }
             });
@@ -109,10 +112,54 @@
                 }
                 else
                 {
+                    contact.lastName = lastName.value;
                     errorMessage.hidden = true;
                 }
             });
 
+            let contactNumber = document.getElementById("contactNumber");
+            contactNumber.addEventListener("blur", (event) =>
+            {
+                let contactNumberPattern = /^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/;
+                if(!contactNumberPattern.test(contactNumber.value))
+                {
+                    contactNumber.focus();
+                    errorMessage.hidden = false;
+                    errorMessage.textContent = "Please enter a Valid Contact Number"; 
+                }
+                else
+                {
+                    contact.contactNumber = contactNumber.value;
+                    errorMessage.hidden = true;
+                }
+                
+            });
+
+            let emailAddress = document.getElementById("emailAddress");
+            emailAddress.addEventListener("blur", (event) =>
+            {
+                let emailPattern = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+                if(!emailPattern.test(emailAddress.value))
+                {
+                    emailAddress.focus();
+                    errorMessage.hidden = false;
+                    errorMessage.textContent = "Please enter a Valid email address"; 
+                }
+                else
+                {
+                    contact.emailAddress = emailAddress.value;
+                    errorMessage.hidden = true;
+                }
+                
+            });
+
+
+
+            let shortMessage = document.getElementById("shortMessage");
+            shortMessage.addEventListener("blur", (event) => {
+                contact.shortMessage = shortMessage.value;
+            });
+           
 
 
             // creates a "hook" or reference to the button element with an id of "submitButton"
@@ -122,6 +169,9 @@
             {
                 event.preventDefault();
                 console.log("Submit Button Clicked");
+
+                console.log(contact);
+
             });
         }
         return false;
