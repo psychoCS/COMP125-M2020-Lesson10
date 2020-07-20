@@ -1,0 +1,28 @@
+{
+    "addreddBook": {
+        {
+            "firstName": "Thiago",
+            "lastname": "Batista",
+            "emailAddress": "thiagoluiz@hotmail.com",
+            "contactNumber": "41556662",
+            "shortMessage": "Hello, World!"
+        },
+        {
+            "firstName": "Peter",
+            "lastname": "Parker",
+            "emailAddress": "PParker@hotmail.com",
+            "contactNumber": "41556662",
+            "shortMessage": "With Great powers..."
+        },
+        {
+            "firstName": "Thiago",
+            "lastname": "Batista",
+            "emailAddress": "thiagoluiz@hotmail.com",
+            "contactNumber": "41556662",
+            "shortMessage": "Hello, World!"
+        },
+
+    }
+
+
+}

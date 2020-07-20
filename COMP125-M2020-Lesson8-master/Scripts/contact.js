@@ -21,6 +21,17 @@ let objects;
             outputstring += "Short Message         : " + this.shortMessage + "\n";
             return outputstring;
         }
+
+        toJSON() {
+            JSONObject = {
+                firstName: this.firstName,
+                lastName: this.lastName,
+                emailAddress: this.emailAddress,
+                contactNumber: this.contactNumber
+                shortMessage: this.shortMessage
+            }
+        }
+
     }
     objects.Contact = Contact
 
