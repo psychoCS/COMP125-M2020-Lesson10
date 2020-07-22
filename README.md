@@ -1,3 +1,3 @@
-# COMP125-M2020-Lesson6
+# COMP125-M2020-Lesson9
 
-## Demo Project for COMP 125 - Client Side Scripting - Lesson 8
+## Demo Project for COMP 125 - Client Side Scripting - Lesson 9
